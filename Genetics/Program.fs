@@ -80,10 +80,11 @@ let searchIterative len itters goal =
 
 [<EntryPoint>]
 let main argv = 
-    let strandLength = 10
+    let strandLength = 15
     let itters = 1000000
+    let goal = 60.50
 
-    let res = searchIterative strandLength itters 60.50
+    let res = searchIterative strandLength itters goal
 
     match res with
     | Some(strand), i ->
