@@ -39,12 +39,7 @@ let geneFunc gene =
     | I -> 3.0
 
 let genStrand len =
-    let rec loop i acc =
-        if i < len then
-            let g = geneEnum (rand.Next())
-            loop (i+1) (g::acc)
-        else acc
-    loop 0 []
+    [ for i in 1..len do yield geneEnum (rand.Next()) ]
 
 let rec crossOver xs ys acc =
     match (xs, ys) with
